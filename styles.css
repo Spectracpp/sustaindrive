@@ -1,0 +1,329 @@
+/* Reset default browser styles */
+body, h1, h2, h3, h4, h5, h6, p, a, button, input {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Variables */
+:root {
+    --background: hsl(210, 100%, 6%);
+    --foreground: hsl(180, 100%, 90%);
+    --primary: hsl(200, 100%, 28%);
+    --primary-foreground: hsl(180, 100%, 90%);
+    --secondary: hsl(203, 23%, 30%);
+    --secondary-foreground: hsl(180, 100%, 90%);
+    --accent: hsl(198, 70%, 50%);
+    --accent-foreground: hsl(185, 10%, 13%);
+    --destructive: hsl(0, 98%, 44%);
+    --destructive-foreground: hsl(0, 0%, 100%);
+    --muted: hsl(200, 50%, 30%);
+    --muted-foreground: hsl(180, 100%, 90%);
+    --card: hsl(210, 100%, 12%);
+    --card-foreground: hsl(180, 100%, 90%);
+    --popover: hsl(210, 100%, 15%);
+    --popover-foreground: hsl(180, 100%, 90%);
+    --border: hsl(210, 50%, 40%);
+    --input: hsl(210, 50%, 40%);
+    --ring: hsl(180, 100%, 90%);
+    --radius: 0rem;
+}
+
+/* General styles */
+body {
+    font-family: var(--font-body, Arial, sans-serif);
+    line-height: 1.6;
+    color: var(--foreground);
+    background: var(--background);
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--primary-foreground);
+    text-decoration: none;
+}
+
+.logo svg {
+    margin-right: 10px;
+}
+
+nav a {
+    color: var(--primary-foreground);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+nav button {
+    background: var(--secondary);
+    border: none;
+    color: var(--secondary-foreground);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav button:hover {
+    background-color: var(--destructive);
+    transform: scale(1.05);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Main content */
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    color: var(--primary-foreground);
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.badge {
+    background: var(--accent);
+    color: var(--accent-foreground);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+/* Sections */
+section {
+    padding: 40px 0;
+}
+
+.section-content {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 8px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card svg {
+    margin-bottom: 10px;
+    fill: var(--accent);
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+/* Join Community Section */
+.join-community {
+    background: var(--background); /* Same as page background */
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.join-community h2 {
+    margin-bottom: 20px;
+}
+
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.subscribe-form input {
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subscribe-form input:focus {
+    background-color: var(--primary);
+    box-shadow: 0 0 8px var(--accent);
+}
+
+.subscribe-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: var(--destructive);
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    background: var(--card); /* Footer background color */
+    color: var(--card-foreground); /* Footer text color */
+    padding: 40px 20px;
+    border-top: 1px solid var(--border); /* Optional border at the top */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-column {
+    width: 22%; /* Adjust column width */
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+    color: var(--primary); /* Heading color */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: var(--primary-foreground); /* Link color */
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+/* Social Media Icons */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px; /* Width of the icon container */
+    height: 40px; /* Height of the icon container */
+    color: var(--primary); /* Icon color */
+    border: 2px solid var(--border); /* Border color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px; /* Slightly rounded corners for a modern look */
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--accent); /* Hover color */
+    border-color: var(--accent); /* Hover border color */
+}
+
+.social-icon svg {
+    width: 24px;
+    height: 24px;
+    margin: 8px; /* Center the icon within the container */
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        background: var(--primary);
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .menu-toggle svg {
+        fill: var(--primary-foreground);
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .footer-column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
